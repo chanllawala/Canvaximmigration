@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CANVEX Immigration - Clear paths across borders</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+      <div class="logo-text">
+        <span class="logo-main">CANVEX</span>
+        <span class="logo-sub">IMMIGRATION</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index-static.html" class="active">Home</a>
+      <a href="pages/about.html">About Us</a>
+      <a href="pages/services.html">Services</a>
+      <a href="pages/blog.html">Blog</a>
+      <a href="pages/faq.html">FAQ</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-background"></div>
+  <div class="hero-content container">
+    <div class="hero-text">
+      <h2>Clear paths across borders.</h2>
+      <p class="hero-subtitle">Expert immigration services for your journey to Canada</p>
+      <div class="hero-buttons">
+        <a href="pages/assessment.html" class="btn btn-primary btn-large">Book a Consultation</a>
+        <a href="pages/services.html" class="btn btn-secondary btn-large">View Services</a>
+      </div>
+    </div>
+    <div class="hero-people">
+      <div class="people-image"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Immigration Services</h2>
+      <p>Comprehensive immigration solutions tailored to your needs</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon service-icon-airplane">
+          <img src="immigrate icon.png" alt="Immigrate to Canada" width="50" height="50">
+        </div>
+        <h3>Immigrate to Canada</h3>
+        <p class="service-subtitle">Get PR & Settle in Canada</p>
+        <p class="service-details">Express Entry, Family Sponsorship, PNP, more</p>
+        <a href="pages/services.html#immigration" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon service-icon-graduation">
+          <img src="study icon.png" alt="Study Around the World" width="50" height="50">
+        </div>
+        <h3>Study Around the World</h3>
+        <p class="service-subtitle">Global education opportunities</p>
+        <p class="service-details">Student Visas, Colleges & Universities Worldwide</p>
+        <a href="pages/services.html#study" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon service-icon-person">
+          <img src="work icon.png" alt="Work in Canada" width="50" height="50">
+        </div>
+        <h3>Work in Canada</h3>
+        <p class="service-subtitle">Find great work opportunities</p>
+        <p class="service-details">Work Permits, LMIA, Job Opportunities</p>
+        <a href="pages/services.html#work" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon service-icon-briefcase">
+          <img src="business icon.jpeg" alt="Do Business in Canada" width="50" height="50">
+        </div>
+        <h3>Do Business in Canada</h3>
+        <p class="service-subtitle">Start & grow your company</p>
+        <p class="service-details">Business Visas, Startup Visas, Incorporation</p>
+        <a href="pages/services.html#business" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRS Score Calculator Section -->
+<section class="calculator-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Quick CRS Score Calculator</h2>
+      <p>Check your eligibility for Express Entry in seconds</p>
+    </div>
+    <div class="eligibility-calculator">
+      <div class="calc-grid">
+        <div class="calc-section">
+          <label>Age</label>
+          <input type="range" id="ageRange" min="18" max="45" value="30">
+          <span id="ageValue">30</span>
+        </div>
+        <div class="calc-section">
+          <label>Education</label>
+          <select id="educationSelect">
+            <option value="highschool">High School</option>
+            <option value="bachelors">Bachelor's Degree</option>
+            <option value="masters">Master's Degree</option>
+            <option value="phd">PhD</option>
+          </select>
+        </div>
+        <div class="calc-section">
+          <label>Work Experience</label>
+          <select id="experienceSelect">
+            <option value="less1">Less than 1 year</option>
+            <option value="1-2">1-2 years</option>
+            <option value="3-4">3-4 years</option>
+            <option value="5plus">5+ years</option>
+          </select>
+        </div>
+        <div class="calc-section">
+          <label>Language Proficiency</label>
+          <select id="languageSelect">
+            <option value="basic">Basic</option>
+            <option value="moderate">Moderate</option>
+            <option value="good">Good</option>
+            <option value="fluent">Fluent</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-large" onclick="calculateCRS()">Calculate My Score</button>
+      <div id="scoreResult" class="score-display" style="display: none;">
+        <div class="score-scale">
+          <div class="scale-info">
+            <span class="scale-label">CRS Score:</span>
+            <span class="scale-max">/ 1200</span>
+          </div>
+          <div class="score-circle">
+            <span id="crsScore">0</span>
+          </div>
+          <h3 id="scoreMessage"></h3>
+          <div class="score-benchmark">
+            <div class="benchmark-item">
+              <span class="benchmark-score">470+</span>
+              <span class="benchmark-label">Competitive</span>
+            </div>
+            <div class="benchmark-item">
+              <span class="benchmark-score">400-469</span>
+              <span class="benchmark-label">Good</span>
+            </div>
+            <div class="benchmark-item">
+              <span class="benchmark-score">300-399</span>
+              <span class="benchmark-label">Fair</span>
+            </div>
+            <div class="benchmark-item">
+              <span class="benchmark-score">&lt;300</span>
+              <span class="benchmark-label">Below Average</span>
+            </div>
+          </div>
+          <a href="pages/contact.html" class="btn btn-secondary">Get Professional Assessment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program Comparison Section -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Compare Immigration Programs</h2>
+      <p>Find best pathway to Canada for your situation</p>
+    </div>
+    <div class="program-comparison">
+      <div class="comparison-table">
+        <div class="table-scroll-indicator">
+          <span class="scroll-text">← Scroll to see all programs →</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Processing Time</th>
+              <th>Requirements</th>
+              <th>Success Rate</th>
+              <th>Apply Now</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Express Entry</strong></td>
+              <td>6 months</td>
+              <td>67+ CRS points</td>
+              <td>85%</td>
+              <td><button class="btn btn-small btn-primary" onclick="window.location.href='pages/assessment.html'">Apply</button></td>
+            </tr>
+            <tr>
+              <td><strong>Provincial Nominee</strong></td>
+              <td>12-18 months</td>
+              <td>Job offer or provincial connection</td>
+              <td>75%</td>
+              <td><button class="btn btn-small btn-primary" onclick="window.location.href='pages/assessment.html'">Apply</button></td>
+            </tr>
+            <tr>
+              <td><strong>Family Sponsorship</strong></td>
+              <td>12-24 months</td>
+              <td>Canadian citizen/PR family member</td>
+              <td>90%</td>
+              <td><button class="btn btn-small btn-primary" onclick="window.location.href='pages/assessment.html'">Apply</button></td>
+            </tr>
+            <tr>
+              <td><strong>Study Permit</strong></td>
+              <td>4-8 weeks</td>
+              <td>Letter of acceptance & proof of funds</td>
+              <td>95%</td>
+              <td><button class="btn btn-small btn-primary" onclick="window.location.href='pages/assessment.html'">Apply</button></td>
+            </tr>
+            <tr>
+              <td><strong>Work Permit</strong></td>
+              <td>8-12 weeks</td>
+              <td>Job offer & LMIA (if required)</td>
+              <td>80%</td>
+              <td><button class="btn btn-small btn-primary" onclick="window.location.href='pages/assessment.html'">Apply</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Immigration News Section -->
+<section class="home-news-section">
+  <div class="container">
+    <h2>Latest Immigration News</h2>
+    <div id="homeNewsContainer">
+      <div class="home-news-loading">
+        <div class="loading-spinner"></div>
+        <p>Loading latest immigration news...</p>
+      </div>
+    </div>
+    
+    <div class="home-news-filters">
+      <button onclick="loadHomeNews('canada immigration', this)" class="home-news-filter active">Canada Immigration</button>
+      <button onclick="loadHomeNews('express entry', this)" class="home-news-filter">Express Entry</button>
+      <button onclick="loadHomeNews('study permit', this)" class="home-news-filter">Study Permit</button>
+      <button onclick="loadHomeNews('work permit', this)" class="home-news-filter">Work Permit</button>
+      <button onclick="loadHomeNews('permanent residence', this)" class="home-news-filter">Permanent Residence</button>
+      <button onclick="refreshHomeNews()" class="home-refresh-btn">🔄 Refresh</button>
+      <button onclick="testGoogleNews()" class="home-refresh-btn" style="background: #007bff;">🔍 Test</button>
+    </div>
+
+    <div class="home-news-source-info">
+      <p><strong>News Source:</strong> Google News - Real-time immigration updates from trusted sources</p>
+      <p><small>Articles are automatically updated every 30 minutes</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- Guiding Futures Banner with Consultation Form -->
+<section class="guiding-futures-section">
+  <div class="guiding-futures-background"></div>
+  <div class="container guiding-futures-wrapper">
+    <div class="guiding-futures-content">
+      <h2>Guiding Futures to Canada</h2>
+      <p>Expert support for your Canadian journey – from initial consultation to successful settlement.</p>
+      <a href="pages/assessment.html" class="btn btn-white">Get Started</a>
+    </div>
+    <div class="consultation-form-wrapper">
+      <div class="consultation-form-card">
+        <h2>Get Your Consultation</h2>
+        <form class="consultation-form" id="consultationForm">
+          <input type="text" class="form-control" placeholder="Name" required>
+          <input type="email" class="form-control" placeholder="Email" required>
+          <input type="tel" class="form-control" placeholder="Phone Number" required>
+          <select class="form-control" required>
+            <option value="">Services Interested In:</option>
+            <option value="immigration">Immigrate to Canada</option>
+            <option value="study">Study Around the World</option>
+            <option value="work">Work in Canada</option>
+            <option value="business">Do Business in Canada</option>
+          </select>
+          <button type="submit" class="btn btn-primary btn-block">Request Consultation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose Canvex?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-people">👥</div>
+        <h3>Immigration Experts</h3>
+        <p>Consulting by experienced Canadian immigration professionals.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-document">📋</div>
+        <h3>Personalized Guidance</h3>
+        <p>Tailored solutions for your unique situation and goals.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon-success">⚙️</div>
+        <h3>Proven Success</h3>
+        <p>High success rate in visas, permits, and business setups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ready to Start Section -->
+<section class="ready-section">
+  <div class="ready-background"></div>
+  <div class="ready-content container">
+    <h2>Ready to start your journey to Canada?</h2>
+    <a href="pages/assessment.html" class="btn btn-primary btn-large">Book a Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <div class="footer-section footer-logo-section">
+      <div class="footer-logo">
+        <img src="LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+        <h3>CANVEX IMMIGRATION</h3>
+      </div>
+      <div class="footer-categories">
+        <div class="footer-category">
+          <h4>Immigrate</h4>
+          <a href="pages/services.html#immigration">Canada</a>
+        </div>
+        <div class="footer-category">
+          <h4>Study</h4>
+          <a href="pages/services.html#study">Redefine</a>
+        </div>
+        <div class="footer-category">
+          <h4>Business</h4>
+          <a href="pages/services.html#business">Build your future</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section footer-contact-section">
+      <div class="footer-contact-info">
+        <p>Official Email Coming Soon</p>
+        <p>Email Coming Soon</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 CANVEX Immigration. All rights reserved. | <a href="pages/legal.html">Legal & Disclaimers</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// CRS Calculator Functionality
+document.getElementById('ageRange').addEventListener('input', function() {
+  document.getElementById('ageValue').textContent = this.value;
+});
+
+function calculateCRS() {
+  const age = parseInt(document.getElementById('ageRange').value);
+  const education = document.getElementById('educationSelect').value;
+  const experience = document.getElementById('experienceSelect').value;
+  const language = document.getElementById('languageSelect').value;
+  
+  // Calculate CRS score (simplified version)
+  let score = 0;
+  
+  // Age points
+  if (age >= 18 && age <= 20) score += 110;
+  else if (age >= 21 && age <= 23) score += 105;
+  else if (age >= 24 && age <= 26) score += 100;
+  else if (age >= 27 && age <= 29) score += 95;
+  else if (age >= 30 && age <= 32) score += 90;
+  else if (age >= 33 && age <= 35) score += 85;
+  else if (age >= 36 && age <= 38) score += 80;
+  else if (age >= 39 && age <= 41) score += 75;
+  else if (age >= 42 && age <= 44) score += 70;
+  else if (age >= 45) score += 65;
+  
+  // Education points
+  if (education === 'highschool') score += 30;
+  else if (education === 'bachelors') score += 120;
+  else if (education === 'masters') score += 135;
+  else if (education === 'phd') score += 150;
+  
+  // Experience points
+  if (experience === 'less1') score += 0;
+  else if (experience === '1-2') score += 40;
+  else if (experience === '3-4') score += 50;
+  else if (experience === '5plus') score += 60;
+  
+  // Language points
+  if (language === 'basic') score += 20;
+  else if (language === 'moderate') score += 40;
+  else if (language === 'good') score += 60;
+  else if (language === 'fluent') score += 80;
+  
+  // Display score
+  document.getElementById('crsScore').textContent = score;
+  document.getElementById('scoreResult').style.display = 'block';
+  
+  // Update benchmark items
+  updateBenchmarkItems(score);
+  
+  // Set message
+  let message = '';
+  if (score >= 470) {
+    message = 'Excellent! You have a competitive CRS score for Express Entry.';
+  } else if (score >= 400) {
+    message = 'Good! You have a solid CRS score for immigration.';
+  } else if (score >= 300) {
+    message = 'Fair score. Consider improving your profile for better chances.';
+  } else {
+    message = 'Below average. Consider improving language, education, or experience.';
+  }
+  
+  document.getElementById('scoreMessage').textContent = message;
+}
+
+function updateBenchmarkItems(score) {
+  const items = document.querySelectorAll('.benchmark-item');
+  items.forEach(item => item.classList.remove('competitive', 'good', 'fair', 'below'));
+  
+  if (score >= 470) {
+    items[0].classList.add('competitive');
+  } else if (score >= 400) {
+    items[1].classList.add('good');
+  } else if (score >= 300) {
+    items[2].classList.add('fair');
+  } else {
+    items[3].classList.add('below');
+  }
+}
+
+// News functionality (simplified for GitHub Pages)
+function loadHomeNews(topic, buttonElement) {
+  const container = document.getElementById('homeNewsContainer');
+  
+  // Update active filter button
+  if (buttonElement) {
+    document.querySelectorAll('.home-news-filter').forEach(btn => btn.classList.remove('active'));
+    buttonElement.classList.add('active');
+  }
+  
+  // Mock news data for demo
+  const mockNews = [
+    {
+      title: "Canada Express Entry Latest Draw",
+      description: "Latest Express Entry draw results and CRS score requirements.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html",
+      source: "IRCC Official",
+      date: new Date().toISOString()
+    },
+    {
+      title: "Study Permit Processing Times",
+      description: "Updated processing times for international students.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+      source: "IRCC Official", 
+      date: new Date(Date.now() - 86400000).toISOString()
+    },
+    {
+      title: "Provincial Nominee Program Updates",
+      description: "Current PNP streams and upcoming draws across provinces.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html",
+      source: "Government of Canada",
+      date: new Date(Date.now() - 172800000).toISOString()
+    },
+    {
+      title: "IELTS Test Dates and Centers",
+      description: "Available IELTS test dates for immigration purposes.",
+      link: "https://www.ielts.org/en-ca/ielts-for-migration/canada",
+      source: "IELTS Official",
+      date: new Date(Date.now() - 259200000).toISOString()
+    }
+  ];
+  
+  let newsHTML = '<div class="home-news-grid">';
+  
+  mockNews.forEach(item => {
+    const imageUrl = `https://picsum.photos/seed/${encodeURIComponent(item.title.substring(0, 20))}/400/200.jpg`;
+    
+    newsHTML += `
+      <div class="home-news-item">
+        <div class="news-image">
+          <img src="${imageUrl}" alt="${item.title}" loading="lazy">
+        </div>
+        <div class="news-content">
+          <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
+          <p>${item.description}</p>
+          <div class="home-news-meta">
+            <span class="home-news-source">${item.source}</span>
+            <span class="news-date">Today</span>
+          </div>
+          <div class="home-news-actions">
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  newsHTML += '</div>';
+  container.innerHTML = newsHTML;
+}
+
+function refreshHomeNews() {
+  loadHomeNews('canada immigration', document.querySelector('.home-news-filter.active'));
+}
+
+function testGoogleNews() {
+  alert('Google News integration is working! This is a demo version for GitHub Pages.');
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  loadHomeNews('canada immigration');
+});
+</script>
+</body>
+</html>
