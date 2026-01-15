@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & News | CANVEX Immigration</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="../LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+      <div class="logo-text">
+        <span class="logo-main">CANVEX</span>
+        <span class="logo-sub">IMMIGRATION</span>
+      </div>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="container">
+    <div class="page-header">
+      <h1>Immigration Blog & News</h1>
+      <p class="page-subtitle">Stay updated with the latest immigration news, policy changes, and success stories</p>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <button onclick="translatePage('en')" class="lang-btn active">English</button>
+      <button onclick="translatePage('hi')" class="lang-btn">हिन्दी</button>
+      <button onclick="translatePage('pa')" class="lang-btn">ਪੰਜਾਬੀ</button>
+      <button onclick="translatePage('gu')" class="lang-btn">ગુજરાતી</button>
+    </div>
+
+    <!-- Currency Converter -->
+    <div class="currency-converter">
+      <h3>Currency Converter</h3>
+      <div class="converter-form">
+        <input type="number" id="amount" placeholder="Amount" value="100">
+        <select id="fromCurrency">
+          <option value="CAD">CAD ($)</option>
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+        <span>=</span>
+        <input type="text" id="toCurrency" readonly>
+        <select id="toCurrencySelect">
+          <option value="USD">USD ($)</option>
+          <option value="CAD">CAD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+        <button onclick="convertCurrency()" class="btn btn-primary">Convert</button>
+      </div>
+    </div>
+
+    <!-- Country Comparison Tool -->
+    <section class="comparison-tool">
+      <h2>Country Comparison Tool</h2>
+      <p>Compare immigration options across different countries</p>
+      
+      <div class="country-selector">
+        <div class="country-card">
+          <h3>🇨🇦 Canada</h3>
+          <div class="country-stats">
+            <div class="stat">
+              <span class="stat-label">Processing Time:</span>
+              <span class="stat-value">6-12 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Success Rate:</span>
+              <span class="stat-value">85%</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Min Investment:</span>
+              <span class="stat-value">$12,000 CAD</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Path to PR:</span>
+              <span class="stat-value">✓ Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card">
+          <h3>🇺🇸 United States</h3>
+          <div class="country-stats">
+            <div class="stat">
+              <span class="stat-label">Processing Time:</span>
+              <span class="stat-value">8-18 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Success Rate:</span>
+              <span class="stat-value">65%</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Min Investment:</span>
+              <span class="stat-value">$50,000 USD</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Path to PR:</span>
+              <span class="stat-value">✗ Limited</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card">
+          <h3>🇦🇺 Australia</h3>
+          <div class="country-stats">
+            <div class="stat">
+              <span class="stat-label">Processing Time:</span>
+              <span class="stat-value">6-15 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Success Rate:</span>
+              <span class="stat-value">75%</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Min Investment:</span>
+              <span class="stat-value">$15,000 AUD</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Path to PR:</span>
+              <span class="stat-value">✓ Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="country-card">
+          <h3>🇬🇧 United Kingdom</h3>
+          <div class="country-stats">
+            <div class="stat">
+              <span class="stat-label">Processing Time:</span>
+              <span class="stat-value">3-8 months</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Success Rate:</span>
+              <span class="stat-value">70%</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Min Investment:</span>
+              <span class="stat-value">£25,000 GBP</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Path to PR:</span>
+              <span class="stat-value">✓ Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Immigration Glossary -->
+    <section class="glossary-section">
+      <h2>Immigration Glossary</h2>
+      <div class="glossary-search">
+        <input type="text" id="glossarySearch" placeholder="Search immigration terms..." onkeyup="searchGlossary()">
+      </div>
+      
+      <div class="glossary-grid">
+        <div class="glossary-item" data-term="express entry">
+          <h3>Express Entry</h3>
+          <p>Canada's online immigration system for skilled workers. It manages applications for permanent residence under federal economic immigration programs.</p>
+        </div>
+
+        <div class="glossary-item" data-term="crs">
+          <h3>Comprehensive Ranking System (CRS)</h3>
+          <p>A points-based system used to rank Express Entry candidates. Points are awarded for factors like age, education, work experience, and language skills.</p>
+        </div>
+
+        <div class="glossary-item" data-term="lmia">
+          <h3>Labour Market Impact Assessment (LMIA)</h3>
+          <p>A document that Canadian employers may need to get before hiring a foreign worker. It proves that there's a need for the foreign worker and no Canadians are available.</p>
+        </div>
+
+        <div class="glossary-item" data-term="pnp">
+          <h3>Provincial Nominee Program (PNP)</h3>
+          <p>Provinces and territories can nominate candidates for permanent residence based on their specific economic needs and labour market conditions.</p>
+        </div>
+
+        <div class="glossary-item" data-term="study permit">
+          <h3>Study Permit</h3>
+          <p>A document issued by Immigration, Refugees and Citizenship Canada (IRCC) that allows foreign nationals to study at designated learning institutions in Canada.</p>
+        </div>
+
+        <div class="glossary-item" data-term="work permit">
+          <h3>Work Permit</h3>
+          <p>A document that authorizes a foreign national to work in Canada for a temporary period. Most require a job offer and sometimes an LMIA.</p>
+        </div>
+
+        <div class="glossary-item" data-term="permanent residence">
+          <h3>Permanent Residence (PR)</h3>
+          <p>Status that allows immigrants to live and work in Canada permanently. PR holders have most of the same rights as Canadian citizens.</p>
+        </div>
+
+        <div class="glossary-item" data-term="ielts">
+          <h3>IELTS (International English Language Testing System)</h3>
+          <p>English language proficiency test required for most Canadian immigration programs. Tests reading, writing, listening, and speaking skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-section">
+      <h2>Latest Blog Posts</h2>
+      <div id="blogContainer">
+        <div class="blog-loading">
+          <div class="loading-spinner"></div>
+          <p>Loading latest blog posts...</p>
+        </div>
+      </div>
+      
+      <div class="blog-filters">
+        <button onclick="loadGoogleBlogs('canada immigration')" class="blog-filter active">Canada Immigration</button>
+        <button onclick="loadGoogleBlogs('express entry')" class="blog-filter">Express Entry</button>
+        <button onclick="loadGoogleBlogs('study permit')" class="blog-filter">Study Permit</button>
+        <button onclick="loadGoogleBlogs('work permit')" class="blog-filter">Work Permit</button>
+        <button onclick="loadGoogleBlogs('permanent residence')" class="blog-filter">Permanent Residence</button>
+        <button onclick="refreshBlogs()" class="refresh-btn">🔄 Refresh</button>
+      </div>
+
+      <div class="blog-source-info">
+        <p><strong>Blog Source:</strong> Google Blog Search - Immigration insights from experts worldwide</p>
+        <p><small>Blog posts are automatically updated every 30 minutes</small></p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div class="footer-section">
+      <div class="footer-logo">
+        <h3>CANVEX IMMIGRATION</h3>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Immigrate</h4>
+      <a href="services.html#immigration">Canada</a>
+    </div>
+    <div class="footer-section">
+      <h4>Study</h4>
+      <a href="services.html#study">Student Pathways</a>
+    </div>
+    <div class="footer-section">
+      <h4>Business</h4>
+      <a href="services.html#business">Business Immigration</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>+1 324 667 9900</p>
+      <p>infor@canvex.ca</p>
+      <p>Email Coming Soon</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 CANVEX Immigration. All rights reserved. | <a href="legal.html">Legal & Disclaimers</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// Translation System
+const translations = {
+  en: {
+    title: "Immigration Blog & News",
+    subtitle: "Stay updated with the latest immigration news, policy changes, and success stories",
+    currencyConverter: "Currency Converter",
+    convert: "Convert",
+    countryComparison: "Country Comparison Tool",
+    compareDesc: "Compare immigration options across different countries",
+    glossary: "Immigration Glossary",
+    searchPlaceholder: "Search immigration terms...",
+    latestNews: "Latest Immigration News",
+    loading: "Loading latest immigration news...",
+    blogPosts: "Latest Blog Posts",
+    readMore: "Read More"
+  },
+  hi: {
+    title: "इमिग्रेशन ब्लॉग और समाचार",
+    subtitle: "नवीनतम इमिग्रेशन समाचार, नीति परिवर्तन और सफलता की कहानियों के साथ अपडेट रहें",
+    currencyConverter: "मुद्रा कनवर्टर",
+    convert: "बदलें",
+    countryComparison: "देश तुलना उपकरण",
+    compareDesc: "विभिन्न देशों में इमिग्रेशन विकल्पों की तुलना करें",
+    glossary: "इमिग्रेशन शब्दावली",
+    searchPlaceholder: "इमिग्रेशन शब्द खोजें...",
+    latestNews: "नवीनतम इमिग्रेशन समाचार",
+    loading: "नवीनतम इमिग्रेशन समाचार लोड हो रहे हैं...",
+    blogPosts: "नवीनतम ब्लॉग पोस्ट",
+    readMore: "और पढ़ें"
+  },
+  pa: {
+    title: "ਇਮੀਗ੍ਰੇਸ਼ਨ ਬਲੌਗ ਅਤੇ ਖਬਰਾਂ",
+    subtitle: "ਨਵੀਨਤਮ ਇਮੀਗ੍ਰੇਸ਼ਨ ਖਬਰਾਂ, ਨੀਤੀ ਤਬਦੀਲੀਆਂ ਅਤੇ ਸਫਲਤਾ ਦੀਆਂ ਕਹਾਣੀਆਂ ਨਾਲ ਅਪਡੇਟ ਰਹੋ",
+    currencyConverter: "ਮੁਦਰਾ ਕਨਵਰਟਰ",
+    convert: "ਬਦਲੋ",
+    countryComparison: "ਦੇਸ਼ ਤੁਲਨਾ ਟੂਲ",
+    compareDesc: "ਵੱਖ-ਵੱਖ ਦੇਸ਼ਾਂ ਵਿੱਚ ਇਮੀਗ੍ਰੇਸ਼ਨ ਵਿਕਲਪਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+    glossary: "ਇਮੀਗ੍ਰੇਸ਼ਨ ਸ਼ਬਦਾਵਲੀ",
+    searchPlaceholder: "ਇਮੀਗ੍ਰੇਸ਼ਨ ਸ਼ਬਦ ਖੋਜੋ...",
+    latestNews: "ਨਵੀਨਤਮ ਇਮੀਗ੍ਰੇਸ਼ਨ ਖਬਰਾਂ",
+    loading: "ਨਵੀਨਤਮ ਇਮੀਗ੍ਰੇਸ਼ਨ ਖਬਰਾਂ ਲੋਡ ਹੋ ਰਹੀਆਂ ਹਨ...",
+    blogPosts: "ਨਵੀਨਤਮ ਬਲੌਗ ਪੋਸਟਾਂ",
+    readMore: "ਹੋਰ ਪੜ੍ਹੋ"
+  },
+  gu: {
+    title: "ઇમિગ્રેશન બ્લોગ અને સમાચાર",
+    subtitle: "નવીનતમ ઇમિગ્રેશન સમાચાર, પોલિસી ફેરફારો અને સફળતાની વાર્તાઓ સાથે અપડેટ રહો",
+    currencyConverter: "કરન્સી કન્વર્ટર",
+    convert: "રૂપાંતરિત કરો",
+    countryComparison: "દેશ સરખામણી સાધન",
+    compareDesc: "વિવિધ દેશોમાં ઇમિગ્રેશન વિકલ્પોની સરખામણી કરો",
+    glossary: "ઇમિગ્રેશન શબ્દાવલી",
+    searchPlaceholder: "ઇમિગ્રેશન શબ્દો શોધો...",
+    latestNews: "નવીનતમ ઇમિગ્રેશન સમાચાર",
+    loading: "નવીનતમ ઇમિગ્રેશન સમાચાર લોડ થઈ રહ્યા છે...",
+    blogPosts: "નવીનતમ બ્લોગ પોસ્ટ",
+    readMore: "વધુ વાંચો"
+  }
+};
+
+function translatePage(lang) {
+  // Update active language button
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Update page content
+  const trans = translations[lang];
+  if (trans) {
+    document.querySelector('h1').textContent = trans.title;
+    document.querySelector('.page-subtitle').textContent = trans.subtitle;
+    document.querySelector('.currency-converter h3').textContent = trans.currencyConverter;
+    document.querySelector('.comparison-tool h2').textContent = trans.countryComparison;
+    document.querySelector('.comparison-tool p').textContent = trans.compareDesc;
+    document.querySelector('.glossary-section h2').textContent = trans.glossary;
+    document.querySelector('#glossarySearch').placeholder = trans.searchPlaceholder;
+    document.querySelector('.news-section h2').textContent = trans.latestNews;
+    document.querySelector('.news-loading p').textContent = trans.loading;
+    document.querySelector('.blog-section h2').textContent = trans.blogPosts;
+    
+    // Update all "Read More" buttons
+    document.querySelectorAll('.btn-outline').forEach(btn => {
+      if (btn.textContent.includes('Read More') || btn.textContent.includes('और पढ़ें') || btn.textContent.includes('ਹੋਰ ਪੜ੍ਹੋ') || btn.textContent.includes('વધુ વાંચો')) {
+        btn.textContent = trans.readMore;
+      }
+    });
+  }
+}
+
+// Currency Converter
+const exchangeRates = {
+  CAD: { USD: 0.74, EUR: 0.68, GBP: 0.58, INR: 61.2, CAD: 1 },
+  USD: { CAD: 1.35, EUR: 0.92, GBP: 0.79, INR: 83.2, USD: 1 },
+  EUR: { CAD: 1.47, USD: 1.09, GBP: 0.86, INR: 90.5, EUR: 1 },
+  GBP: { CAD: 1.72, USD: 1.27, EUR: 1.16, INR: 105.8, GBP: 1 },
+  INR: { CAD: 0.016, USD: 0.012, EUR: 0.011, GBP: 0.0095, INR: 1 }
+};
+
+function convertCurrency() {
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const from = document.getElementById('fromCurrency').value;
+  const to = document.getElementById('toCurrencySelect').value;
+  
+  const result = (amount * exchangeRates[from][to]).toFixed(2);
+  document.getElementById('toCurrency').value = result + ' ' + getCurrencySymbol(to);
+}
+
+function getCurrencySymbol(currency) {
+  const symbols = {
+    CAD: '$', USD: '$', EUR: '€', GBP: '£', INR: '₹'
+  };
+  return symbols[currency] || '';
+}
+
+// Glossary Search
+function searchGlossary() {
+  const searchTerm = document.getElementById('glossarySearch').value.toLowerCase();
+  const items = document.querySelectorAll('.glossary-item');
+  
+  items.forEach(item => {
+    const term = item.dataset.term.toLowerCase();
+    const content = item.textContent.toLowerCase();
+    
+    if (term.includes(searchTerm) || content.includes(searchTerm)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// Google Blog Search Integration
+let blogUpdateInterval;
+
+function loadGoogleBlogs(topic = 'canada immigration') {
+  const container = document.getElementById('blogContainer');
+  container.innerHTML = `
+    <div class="blog-loading">
+      <div class="loading-spinner"></div>
+      <p>Loading latest blog posts...</p>
+    </div>
+  `;
+  
+  // Update active filter button
+  document.querySelectorAll('.blog-filter').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Google Blog Search URL (using Google Custom Search API alternative)
+  const blogSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(topic)}+blog&tbm=bl&tbs=qdr:m&hl=en&gl=CA`;
+  
+  // Use CORS proxy to fetch blog results
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(blogSearchUrl)}`;
+  
+  fetch(proxyUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (data.contents) {
+        parseBlogResults(data.contents);
+      } else {
+        fallbackBlogDisplay();
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching Google Blogs:', error);
+      fallbackBlogDisplay();
+    });
+}
+
+function parseBlogResults(htmlData) {
+  // Create a temporary DOM element to parse HTML
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlData;
+  
+  // Find blog post elements (Google blog search results)
+  const blogPosts = tempDiv.querySelectorAll('div.g, div.TbwUpI, div.kCrYT');
+  
+  if (blogPosts.length === 0) {
+    fallbackBlogDisplay();
+    return;
+  }
+  
+  let blogHTML = '<div class="blog-grid">';
+  let postCount = 0;
+  
+  blogPosts.forEach((post, index) => {
+    if (postCount >= 6) return; // Limit to 6 blog posts
+    
+    const titleElement = post.querySelector('h3, a');
+    const linkElement = post.querySelector('a');
+    const snippetElement = post.querySelector('span, div');
+    
+    if (titleElement && linkElement) {
+      const title = titleElement.textContent.trim();
+      const link = linkElement.href;
+      const snippet = snippetElement ? snippetElement.textContent.trim().substring(0, 150) + '...' : '';
+      
+      // Extract date and source from the post
+      const dateMatch = snippet.match(/\d+ (day|week|month)s? ago|today|yesterday/i);
+      const formattedDate = dateMatch ? dateMatch[0] : 'Recently';
+      
+      // Determine category from topic
+      const category = getCategoryFromTopic(event.target.textContent);
+      
+      blogHTML += `
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="https://picsum.photos/seed/${encodeURIComponent(title)}/400/200.jpg" alt="${title}">
+          </div>
+          <div class="blog-content">
+            <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+            <p class="blog-excerpt">${snippet}</p>
+            <div class="blog-meta">
+              <span class="blog-date">${formattedDate}</span>
+              <span class="blog-category">${category}</span>
+            </div>
+            <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read Full Post</a>
+          </div>
+        </article>
+      `;
+      
+      postCount++;
+    }
+  });
+  
+  blogHTML += '</div>';
+  
+  if (postCount > 0) {
+    document.getElementById('blogContainer').innerHTML = blogHTML;
+  } else {
+    fallbackBlogDisplay();
+  }
+}
+
+function getCategoryFromTopic(topic) {
+  const categories = {
+    'canada immigration': 'Canada Immigration',
+    'express entry': 'Express Entry',
+    'study permit': 'Study Permit',
+    'work permit': 'Work Permit',
+    'permanent residence': 'PR'
+  };
+  return categories[topic.toLowerCase()] || 'Immigration';
+}
+
+function fallbackBlogDisplay() {
+  // Fallback to curated blog posts if search fails
+  const fallbackBlogs = [
+    {
+      title: "Complete Guide to Canada Express Entry 2024",
+      excerpt: "Everything you need to know about Express Entry in 2024, including CRS score requirements, document checklists, and application tips.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html",
+      date: "2 days ago",
+      category: "Express Entry"
+    },
+    {
+      title: "Study Permit Application: Step-by-Step Process",
+      excerpt: "Detailed guide on how to apply for a Canadian study permit, including required documents, financial proof, and biometric requirements.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+      date: "5 days ago",
+      category: "Study Permit"
+    },
+    {
+      title: "Provincial Nominee Programs: Complete Overview",
+      excerpt: "Understanding PNP streams across all Canadian provinces, eligibility requirements, and application processes for 2024.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/provincial-nominees.html",
+      date: "1 week ago",
+      category: "PNP"
+    },
+    {
+      title: "IELTS for Canadian Immigration: Target Scores",
+      excerpt: "Required IELTS scores for different immigration programs, preparation tips, and how to improve your band scores.",
+      link: "https://www.ielts.org/en-ca/ielts-for-migration/canada",
+      date: "2 weeks ago",
+      category: "Language Tests"
+    },
+    {
+      title: "Work Permit Options for Foreign Workers",
+      excerpt: "Different types of Canadian work permits, LMIA requirements, and pathways to permanent residence through work experience.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html",
+      date: "3 weeks ago",
+      category: "Work Permit"
+    },
+    {
+      title: "Canadian Citizenship: Requirements and Process",
+      excerpt: "Complete guide to becoming a Canadian citizen, including residency requirements, language tests, and citizenship application process.",
+      link: "https://www.canada.ca/en/immigration-refugees-citizenship/citizenship.html",
+      date: "1 month ago",
+      category: "Citizenship"
+    }
+  ];
+  
+  let blogHTML = '<div class="blog-grid">';
+  
+  fallbackBlogs.forEach(post => {
+    blogHTML += `
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="https://picsum.photos/seed/${encodeURIComponent(post.title)}/400/200.jpg" alt="${post.title}">
+        </div>
+        <div class="blog-content">
+          <h3><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a></h3>
+          <p class="blog-excerpt">${post.excerpt}</p>
+          <div class="blog-meta">
+            <span class="blog-date">${post.date}</span>
+            <span class="blog-category">${post.category}</span>
+          </div>
+          <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Read Full Post</a>
+        </div>
+      </article>
+    `;
+  });
+  
+  blogHTML += '</div>';
+  
+  document.getElementById('blogContainer').innerHTML = blogHTML;
+}
+
+// Auto-refresh blogs every 30 minutes
+function startBlogAutoRefresh() {
+  // Load initial blogs
+  loadGoogleBlogs();
+  
+  // Set up auto-refresh
+  blogUpdateInterval = setInterval(() => {
+    const activeFilter = document.querySelector('.blog-filter.active');
+    const topic = activeFilter ? activeFilter.textContent.toLowerCase().replace(' ', ' ') : 'canada immigration';
+    loadGoogleBlogs(topic);
+  }, 30 * 60 * 1000); // 30 minutes
+}
+
+// Manual refresh function
+function refreshBlogs() {
+  const activeFilter = document.querySelector('.blog-filter.active');
+  const topic = activeFilter ? activeFilter.textContent.toLowerCase().replace(' ', ' ') : 'canada immigration';
+  loadGoogleBlogs(topic);
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  startNewsAutoRefresh();
+  startBlogAutoRefresh();
+  convertCurrency(); // Initialize with default conversion
+});
+
+// Clean up intervals when page unloads
+window.addEventListener('beforeunload', function() {
+  if (newsUpdateInterval) {
+    clearInterval(newsUpdateInterval);
+  }
+  if (blogUpdateInterval) {
+    clearInterval(blogUpdateInterval);
+  }
+});
+</script>
+
+<style>
+/* Language Selector */
+.language-selector {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.lang-btn {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: #e9ecef;
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Currency Converter */
+.currency-converter {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.converter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.converter-form input,
+.converter-form select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.converter-form button {
+  margin-top: 0;
+}
+
+/* Country Comparison Tool */
+.comparison-tool {
+  margin: 3rem 0;
+}
+
+.country-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.country-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.country-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.country-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Glossary */
+.glossary-section {
+  margin: 3rem 0;
+}
+
+.glossary-search {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.glossary-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.glossary-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+}
+
+.glossary-item h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.glossary-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* News Section */
+.news-section {
+  margin: 3rem 0;
+}
+
+.news-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.news-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.news-filter {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.news-filter:hover {
+  background: #e9ecef;
+}
+
+.news-filter.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.refresh-btn {
+  background: #28a745;
+  color: white;
+  border: 1px solid #28a745;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #218838;
+  transform: rotate(180deg);
+}
+
+.news-source-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.news-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.news-item h4 {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.news-item h4 a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.news-item h4 a:hover {
+  color: var(--primary);
+}
+
+.news-item p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.news-source {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.news-actions {
+  text-align: right;
+}
+
+.news-actions .btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+}
+
+/* Blog Section */
+.blog-section {
+  margin: 3rem 0;
+}
+
+.blog-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.blog-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.blog-filter {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-filter:hover {
+  background: #e9ecef;
+}
+
+.blog-filter.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.blog-source-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.blog-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: 1.5rem;
+}
+
+.blog-content h3 {
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.blog-content h3 a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-content h3 a:hover {
+  color: var(--primary);
+}
+
+.blog-excerpt {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.blog-date {
+  color: #999;
+  font-weight: 500;
+}
+
+.blog-category {
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .converter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .country-selector {
+    grid-template-columns: 1fr;
+  }
+  
+  .glossary-grid,
+  .news-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</body>
+</html>

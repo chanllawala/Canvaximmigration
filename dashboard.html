@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | CANVEX Immigration</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-logo">
+      <img src="LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+      <h3>CANVEX</h3>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Documents</a>
+      <a href="#">Messages</a>
+      <a href="#">Profile</a>
+      <a href="#" class="logout-link">Logout</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <div class="dashboard-header">
+      <h1>Welcome, Client</h1>
+      <p class="dashboard-subtitle">Track your immigration journey</p>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h2>Application Status</h2>
+        <div class="status-section">
+          <p class="status-text">Your application is currently:</p>
+          <span class="status-badge in-review">In Review</span>
+        </div>
+        <div class="status-details">
+          <p><strong>Application Type:</strong> Express Entry - Federal Skilled Worker</p>
+          <p><strong>Submitted:</strong> January 15, 2026</p>
+          <p><strong>Last Updated:</strong> February 1, 2026</p>
+        </div>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Next Steps</h2>
+        <ul class="steps-list">
+          <li class="step-completed">✓ Initial assessment completed</li>
+          <li class="step-completed">✓ Application submitted</li>
+          <li class="step-active">→ Application under review</li>
+          <li class="step-pending">○ Medical examination (if required)</li>
+          <li class="step-pending">○ Background check</li>
+          <li class="step-pending">○ Final decision</li>
+        </ul>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Recent Messages</h2>
+        <div class="messages-preview">
+          <p class="no-messages">No new messages</p>
+          <a href="#" class="btn btn-secondary">View All Messages</a>
+        </div>
+      </div>
+
+      <div class="dashboard-card">
+        <h2>Documents</h2>
+        <div class="documents-summary">
+          <p><strong>Uploaded:</strong> 12 documents</p>
+          <p><strong>Pending:</strong> 2 documents</p>
+          <a href="#" class="btn btn-primary">Manage Documents</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <h2>Important Information</h2>
+      <div class="info-section">
+        <p><strong>Processing Time:</strong> Applications typically take 6-8 months for Express Entry programs. Your application is progressing normally.</p>
+        <p><strong>Contact:</strong> If you have questions or need to update your information, please use the Messages section or contact your consultant directly.</p>
+        <p class="disclaimer-note"><em>Note: All immigration decisions are made by Canadian immigration authorities. This portal provides status updates based on available information.</em></p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/portal.js"></script>
+</body>
+</html>

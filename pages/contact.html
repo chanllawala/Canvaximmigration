@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | CANVEX Immigration</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs@3/dist/email.min.js"></script>
+<script>
+  // Try the most recent Public Key
+  emailjs.init("RybJCd8W22anLkGu8");
+  console.log('EmailJS initialization attempted with latest Public Key');
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="../LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+      <div class="logo-text">
+        <span class="logo-main">CANVEX</span>
+        <span class="logo-sub">IMMIGRATION</span>
+      </div>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="container">
+    <div class="page-header">
+      <h1>Contact Us</h1>
+      <p class="page-subtitle">Get in touch with our team</p>
+    </div>
+
+    <section class="content-section">
+      <div class="contact-wrapper">
+        <div class="contact-form-section">
+          <div class="card">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (XXX) XXX-XXXX">
+              </div>
+              <div class="form-group">
+                <label>Subject</label>
+                <select id="subject" name="subject" class="form-control" required>
+                  <option value="">Select a subject</option>
+                  <option value="consultation">Book a Consultation</option>
+                  <option value="assessment">Free Assessment</option>
+                  <option value="existing-client">Existing Client Inquiry</option>
+                  <option value="general">General Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea id="message" name="message" class="form-control" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+              </div>
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Send Message</button>
+              <div id="formMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-info-section">
+          <div class="card">
+            <h2>Contact Information</h2>
+            <div class="contact-details-list">
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <h3>Phone</h3>
+                  <p>Coming Soon</p>
+                  <p>Coming Soon</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <h3>Email</h3>
+                  <p>chanllawalakirtanajitbhai@gmail.com</p>
+                  <p>chanllawalakirtanajitbhai@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <h3>Office Location</h3>
+                  <p>Email Coming Soon</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="office-hours">
+              <h3>24/7 Services</h3>
+              <p>We are available around the clock to assist with your immigration needs</p>
+              <p>Get support anytime, anywhere</p>
+              <p>Always here to help you succeed</p>
+            </div>
+
+            <div class="affiliation-info">
+              <h3>Professional Team</h3>
+              <p>Experienced Canadian Immigration Professionals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div class="footer-section">
+      <div class="footer-logo">
+        <h3>CANVEX IMMIGRATION</h3>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Immigrate</h4>
+      <a href="services.html#immigration">Canada</a>
+    </div>
+    <div class="footer-section">
+      <h4>Study</h4>
+      <a href="services.html#study">Student Pathways</a>
+    </div>
+    <div class="footer-section">
+      <h4>Business</h4>
+      <a href="services.html#business">Business Immigration</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>+1 324 667 9900</p>
+      <p>chanllawalakirtanajitbhai@gmail.com</p>
+      <p>Email Coming Soon</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p> 2026 CANVEX Immigration. All rights reserved. | <a href="legal.html">Legal & Disclaimers</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
+
+  // Check if running locally (file:// protocol)
+  const isLocal = window.location.protocol === 'file:';
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Disable submit button and show loading
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formMessage.textContent = '';
+      formMessage.className = '';
+
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        subject: document.getElementById('subject').value.trim(),
+        message: document.getElementById('message').value.trim(),
+        form_type: 'Contact'
+      };
+
+      if (isLocal) {
+        // Use mailto fallback for local development
+        const subjectLine = 'CANVEX Immigration - ' + formData.subject.charAt(0).toUpperCase() + formData.subject.slice(1) + ' Request';
+        const body = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent via the CANVEX Immigration website contact form.
+Submission Date: ${new Date().toLocaleString()}`;
+
+        const mailtoLink = `mailto:infor@canvex.ca?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+        
+        // Show message and open email client
+        formMessage.innerHTML = `
+          <div class="info-message">
+            <strong>Opening your email client...</strong><br>
+            If it doesn't open, please email us directly at <a href="mailto:infor@canvex.ca">infor@canvex.ca</a>
+            <div style="margin-top: 15px; padding: 10px; background: #f9f9f9; border-radius: 5px; font-size: 0.9rem;">
+              <strong>Or copy and email this information:</strong><br>
+              <strong>To:</strong> infor@canvex.ca<br>
+              <strong>Subject:</strong> ${subjectLine}<br>
+              <strong>Message:</strong> ${body.replace(/\n/g, '<br>')}
+            </div>
+          </div>
+        `;
+        formMessage.className = 'form-message info-message';
+        
+        // Try to open email client
+        setTimeout(() => {
+          window.location.href = mailtoLink;
+        }, 500);
+        
+        // Reset form
+        contactForm.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        
+        return;
+      }
+
+      // Use PHP backend for web server
+      try {
+        const response = await fetch('../send-email.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Success message
+          formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
+          formMessage.className = 'form-message success-message';
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Scroll to message
+          formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          // Error message
+          formMessage.textContent = 'Error: ' + result.message;
+          formMessage.className = 'form-message error-message';
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly at infor@canvex.ca';
+        formMessage.className = 'form-message error-message';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  }
+});
+</script>
+  successDiv.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+  `;
+  
+  const successContent = successDiv.querySelector('.success-content');
+  successContent.style.cssText = `
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  `;
+  
+  document.body.appendChild(successDiv);
+}
+</script>
+</body>
+</html>

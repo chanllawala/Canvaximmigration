@@ -1,0 +1,33 @@
+# CANVEX Immigration - Git Ignore File
+
+# Security and Logs
+security/security_log.txt
+security/blocked_ips.json
+security/rate_limits.json
+database/canvex.db
+database/*.db
+
+# Sensitive Files
+send-email.php
+*.env
+config.php
+
+# Temporary Files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node Modules (if using)
+node_modules/
+npm-debug.log*
+
+# Build Files
+dist/
+build/

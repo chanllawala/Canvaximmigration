@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Login | CANVEX Immigration</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <img src="LOgo with just leaf.png" alt="CANVEX Logo" width="50" height="50">
+      <h2>CANVEX Immigration</h2>
+    </div>
+    <h3>Client Login</h3>
+    <p class="auth-subtitle">Access your secure client portal</p>
+    
+    <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-control" placeholder="your.email@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+
+    <div class="auth-footer">
+      <p><a href="index.html">← Back to Home</a></p>
+      <p class="auth-help">Need help? <a href="pages/contact.html">Contact Support</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

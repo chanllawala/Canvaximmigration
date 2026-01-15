@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assessment | CANVEX Immigration</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <img src="../LOgo with just leaf.png" alt="CANVEX Logo" width="40" height="40">
+      <div class="logo-text">
+        <span class="logo-main">CANVEX</span>
+        <span class="logo-sub">IMMIGRATION</span>
+      </div>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="container">
+    <div class="page-header">
+      <h1>Free Immigration Assessment</h1>
+      <p class="page-subtitle">Take the first step toward your Canadian dream with our comprehensive immigration assessment</p>
+    </div>
+
+    <section class="content-section">
+      <div class="card">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="progressText">0% Complete</div>
+        </div>
+
+        <form class="assessment-form" id="assessmentForm">
+          <!-- Step 1: Basic Information -->
+          <div class="form-section" id="step1">
+            <h3>Step 1: Basic Information</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>What is your primary immigration goal? <span class="required">*</span></label>
+                <select class="form-control" name="primary_goal" required onchange="updateProgress()">
+                  <option value="">-- Select your primary goal --</option>
+                  <optgroup label="Permanent Residence">
+                    <option value="ee">Express Entry (FSW, CEC, FST)</option>
+                    <option value="pnp">Provincial Nominee Program (PNP)</option>
+                    <option value="aip">Atlantic Immigration Program</option>
+                    <option value="rnip">Rural and Northern Immigration Pilot</option>
+                  </optgroup>
+                  <optgroup label="Temporary Residence">
+                    <option value="study">Study Around the World</option>
+                    <option value="work">Work in Canada</option>
+                    <option value="visit">Visit Canada (Tourist/Visitor Visa)</option>
+                  </optgroup>
+                  <optgroup label="Business & Investment">
+                    <option value="startup">Startup Visa Program</option>
+                    <option value="self_employed">Self-Employed Program</option>
+                    <option value="investor">Investor Programs</option>
+                  </optgroup>
+                  <optgroup label="Family Sponsorship">
+                    <option value="spouse">Spouse/Partner Sponsorship</option>
+                    <option value="parent">Parent/Grandparent Sponsorship</option>
+                    <option value="other_family">Other Family Members</option>
+                  </optgroup>
+                  <option value="not_sure">Not sure - Need guidance</option>
+                </select>
+                <small class="form-hint">Choose the option that best matches your immigration goal</small>
+              </div>
+              
+              <div class="form-group">
+                <label>Current Country of Residence <span class="required">*</span></label>
+                <select class="form-control" name="current_country" required onchange="updateProgress()">
+                  <option value="">-- Select your country --</option>
+                  <option value="US">United States</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="IN">India</option>
+                  <option value="PH">Philippines</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="CA">Canada</option>
+                  <option value="other">Other</option>
+                </select>
+                <small class="form-hint">Select your current country of residence</small>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>Age <span class="required">*</span></label>
+                <input type="number" class="form-control" placeholder="Age" min="18" max="100" required onchange="updateProgress()">
+                <small class="form-hint">Must be 18 years or older</small>
+              </div>
+              
+              <div class="form-group">
+                <label>Education Level <span class="required">*</span></label>
+                <select class="form-control" name="education_level" required onchange="updateProgress()">
+                  <option value="">Select an option</option>
+                  <option value="high-school">High School</option>
+                  <option value="diploma">Diploma/Certificate</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="phd">PhD/Doctorate</option>
+                </select>
+                <small class="form-hint">Highest level of education completed</small>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>Work Experience (Years) <span class="required">*</span></label>
+                <input type="number" class="form-control" placeholder="Years of work experience" min="0" required onchange="updateProgress()">
+                <small class="form-hint">Total years of skilled work experience</small>
+              </div>
+              
+              <div class="form-group">
+                <label>English Language Proficiency <span class="required">*</span></label>
+                <select class="form-control" name="english_proficiency" required onchange="updateProgress()">
+                  <option value="">Select level</option>
+                  <option value="none">No English proficiency</option>
+                  <option value="basic">Basic (Conversational)</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                  <option value="native">Native/Near Native</option>
+                </select>
+                <small class="form-hint">General English proficiency level</small>
+              </div>
+            </div>
+            
+            <button type="button" class="btn btn-secondary" onclick="nextStep()">Next Step →</button>
+          </div>
+
+          <!-- Step 2: Contact Information -->
+          <div class="form-section" id="step2" style="display: none;">
+            <h3>Step 2: Contact Information</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" class="form-control" name="name" placeholder="Your full name" required onchange="updateProgress()">
+                <small class="form-hint">Enter your legal name as it appears on documents</small>
+              </div>
+              
+              <div class="form-group">
+                <label>Email Address <span class="required">*</span></label>
+                <input type="email" class="form-control" name="email" placeholder="your.email@example.com" required onchange="updateProgress()">
+                <small class="form-hint">We'll send your assessment results here</small>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number <span class="required">*</span></label>
+                <input type="tel" class="form-control" name="phone" placeholder="+1 (XXX) XXX-XXXX" required onchange="updateProgress()">
+                <small class="form-hint">Include country code for international numbers</small>
+              </div>
+              
+              <div class="form-group">
+                <label>How did you hear about us? <span class="required">*</span></label>
+                <select class="form-control" name="how_hear" required onchange="updateProgress()">
+                  <option value="">-- Please select --</option>
+                  <option value="search">Search Engine (Google, Bing, etc.)</option>
+                  <option value="social">Social Media (Facebook, Instagram, etc.)</option>
+                  <option value="friend">Referred by a friend or family</option>
+                  <option value="event">Immigration event or seminar</option>
+                  <option value="other">Other</option>
+                </select>
+                <small class="form-hint">This helps us improve our services</small>
+              </div>
+            </div>
+            
+            <div class="form-navigation">
+              <button type="button" class="btn btn-outline" onclick="previousStep()">← Previous</button>
+              <button type="button" class="btn btn-secondary" onclick="nextStep()">Next Step →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Additional Details (Collapsible) -->
+          <div class="form-section" id="step3" style="display: none;">
+            <h3>Step 3: Additional Details <small class="optional-text">(Optional - helps us provide better assessment)</small></h3>
+            
+            <div class="collapsible-section">
+              <button type="button" class="collapse-toggle" onclick="toggleSection('advanced')">
+                <span id="advancedIcon">▼</span> Advanced Information
+              </button>
+              
+              <div id="advancedSection" style="display: none;">
+                <div class="form-group">
+                  <label>Job Offer in Canada?</label>
+                  <select class="form-control" name="job_offer" onchange="updateProgress()">
+                    <option value="">Not sure/Not applicable</option>
+                    <option value="yes_lmia">Yes, with LMIA</option>
+                    <option value="yes_exempt">Yes, LMIA-exempt</option>
+                    <option value="no">No job offer</option>
+                  </select>
+                  <small class="form-hint">Having a job offer may affect your immigration options</small>
+                </div>
+
+                <div class="form-group">
+                  <label>French Language Proficiency</label>
+                  <select class="form-control" name="french_proficiency" onchange="updateProgress()">
+                    <option value="">Not applicable</option>
+                    <option value="none">No French proficiency</option>
+                    <option value="basic">Basic</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                  </select>
+                  <small class="form-hint">French proficiency can provide additional points</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="collapsible-section">
+              <button type="button" class="collapse-toggle" onclick="toggleSection('background')">
+                <span id="backgroundIcon">▼</span> Background Information
+              </button>
+              
+              <div id="backgroundSection" style="display: none;">
+                <div class="form-group">
+                  <label>Previous Immigration Issues</label>
+                  <textarea class="form-control" name="background_info" rows="4" placeholder="Any previous visa refusals, criminal issues, or other concerns..." onchange="updateProgress()"></textarea>
+                  <small class="form-hint">This information helps us identify potential challenges</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-navigation">
+              <button type="button" class="btn btn-outline" onclick="previousStep()">← Previous</button>
+              <button type="button" class="btn btn-secondary" onclick="nextStep()">Review & Submit →</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Review & Submit -->
+          <div class="form-section" id="step4" style="display: none;">
+            <h3>Step 4: Review & Submit</h3>
+            
+            <div class="review-summary" id="reviewSummary">
+              <!-- Summary will be populated by JavaScript -->
+            </div>
+            
+            <div class="form-group">
+              <label class="checkbox-group">
+                <input type="checkbox" name="terms" required onchange="updateProgress()">
+                <span>I understand this is a preliminary assessment and does not guarantee visa approval. I authorize CANVEX Immigration to contact me.</span>
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label class="checkbox-group">
+                <input type="checkbox" name="privacy" required onchange="updateProgress()">
+                <span>I agree to the <a href="legal.html" target="_blank">Privacy Policy</a> and terms.</span>
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label class="checkbox-group">
+                <input type="checkbox" name="newsletter" onchange="updateProgress()">
+                <span>Send me immigration updates and news (optional)</span>
+              </label>
+            </div>
+            
+            <div class="form-navigation">
+              <button type="button" class="btn btn-outline" onclick="previousStep()">← Previous</button>
+              <button type="submit" class="btn btn-primary">Submit Assessment</button>
+            </div>
+          </div>
+        </form>
+
+      <div class="card info-card">
+        <h3>Our Assessment Process</h3>
+        
+        <h4>Step 1: Initial Assessment (Free)</h4>
+        <p>Complete this form with your basic information. Our team will conduct a preliminary review of your eligibility for Canadian immigration programs.</p>
+        
+        <h4>Step 2: Personalized Analysis (1-2 Business Days)</h4>
+        <p>Our experienced immigration consultants will:</p>
+        <ul class="process-list">
+          <li>Evaluate your profile against all relevant immigration programs</li>
+          <li>Calculate your Comprehensive Ranking System (CRS) score (if applicable)</li>
+          <li>Identify potential challenges and solutions</li>
+          <li>Recommend the most suitable immigration pathway(s) for your situation</li>
+        </ul>
+        
+        <h4>Step 3: Detailed Consultation (Optional)</h4>
+        <p>Schedule a one-on-one consultation where we will:</p>
+        <ul class="process-list">
+          <li>Review your personalized immigration strategy in detail</li>
+          <li>Discuss document requirements and preparation timeline</li>
+          <li>Address all your questions and concerns</li>
+          <li>Provide a clear roadmap for your immigration journey</li>
+        </ul>
+        
+        <h4>Step 4: Implementation Support (If You Choose to Proceed)</h4>
+        <p>For clients who decide to work with us, we provide:</p>
+        <ul class="process-list">
+          <li>Complete document checklist and preparation guidance</li>
+          <li>Application form review and submission support</li>
+          <li>Ongoing case management through our client portal</li>
+          <li>Updates on application status and next steps</li>
+        </ul>
+        
+        <div class="assessment-notes">
+          <h4>Important Notes:</h4>
+          <ul>
+            <li>This initial assessment is completely free and non-binding</li>
+            <li>Your information is kept strictly confidential and protected</li>
+            <li>While we provide expert guidance, all final decisions rest with Canadian immigration authorities</li>
+            <li>Our success fee structure is transparent with no hidden costs</li>
+          </ul>
+        </div>
+        
+        <p class="info-note">By submitting this form, you agree to our <a href="legal.html" target="_blank">Privacy Policy</a> and consent to be contacted by a CANVEX Immigration representative.</p>
+      </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div class="footer-section">
+      <div class="footer-logo">
+        <h3>CANVEX IMMIGRATION</h3>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Immigrate</h4>
+      <a href="services.html#immigration">Canada</a>
+    </div>
+    <div class="footer-section">
+      <h4>Study</h4>
+      <a href="services.html#study">Student Pathways</a>
+    </div>
+    <div class="footer-section">
+      <h4>Business</h4>
+      <a href="services.html#business">Business Immigration</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>+1 324 667 9900</p>
+      <p>infor@canvex.ca</p>
+      <p>Email Coming Soon</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 CANVEX Immigration. All rights reserved. | <a href="legal.html">Legal & Disclaimers</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+let currentStep = 1;
+const totalSteps = 4;
+
+// Initialize form
+document.addEventListener('DOMContentLoaded', function() {
+  updateProgress();
+  showStep(currentStep);
+});
+
+function updateProgress() {
+  const form = document.getElementById('assessmentForm');
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  
+  let filledFields = 0;
+  let totalFields = 0;
+  
+  // Count fields based on current step
+  if (currentStep >= 1) {
+    // Step 1 fields (6 fields)
+    totalFields += 6;
+    if (data.primary_goal) filledFields++;
+    if (data.current_country) filledFields++;
+    if (data.age) filledFields++;
+    if (data.education_level) filledFields++;
+    if (data.work_experience) filledFields++;
+    if (data.english_proficiency) filledFields++;
+  }
+  
+  if (currentStep >= 2) {
+    // Step 2 fields (4 fields)
+    totalFields += 4;
+    if (data.name) filledFields++;
+    if (data.email) filledFields++;
+    if (data.phone) filledFields++;
+    if (data.how_hear) filledFields++;
+  }
+  
+  if (currentStep >= 3) {
+    // Step 3 fields (2 optional fields)
+    totalFields += 2;
+    if (data.job_offer) filledFields++;
+    if (data.french_proficiency) filledFields++;
+  }
+  
+  if (currentStep >= 4) {
+    // Step 4 fields (3 fields)
+    totalFields += 3;
+    if (data.terms) filledFields++;
+    if (data.privacy) filledFields++;
+    if (data.newsletter !== undefined) filledFields++;
+  }
+  
+  // Calculate progress percentage
+  const progress = Math.round((filledFields / totalFields) * 100);
+  
+  // Update progress bar
+  document.getElementById('progressFill').style.width = progress + '%';
+  document.getElementById('progressText').textContent = progress + '% Complete';
+  
+  // Update review summary if on step 4
+  if (currentStep === 4) {
+    updateReviewSummary(data);
+  }
+}
+
+function showStep(step) {
+  // Hide all steps
+  for (let i = 1; i <= totalSteps; i++) {
+    const stepElement = document.getElementById('step' + i);
+    if (stepElement) {
+      stepElement.style.display = 'none';
+    }
+  }
+  
+  // Show current step
+  const currentStepElement = document.getElementById('step' + step);
+  if (currentStepElement) {
+    currentStepElement.style.display = 'block';
+  }
+  
+  currentStep = step;
+  updateProgress();
+}
+
+function nextStep() {
+  if (validateCurrentStep()) {
+    if (currentStep < totalSteps) {
+      showStep(currentStep + 1);
+    }
+  }
+}
+
+function previousStep() {
+  if (currentStep > 1) {
+    showStep(currentStep - 1);
+  }
+}
+
+function validateCurrentStep() {
+  const form = document.getElementById('assessmentForm');
+  const requiredFields = getRequiredFieldsForStep(currentStep);
+  
+  for (let fieldName of requiredFields) {
+    const field = form.querySelector(`[name="${fieldName}"]`);
+    if (field && !field.value.trim()) {
+      field.classList.add('error');
+      showFieldError(fieldName, 'This field is required');
+      return false;
+    } else if (field) {
+      field.classList.remove('error');
+    }
+  }
+  
+  return true;
+}
+
+function getRequiredFieldsForStep(step) {
+  switch(step) {
+    case 1:
+      return ['primary_goal', 'current_country', 'age', 'education_level', 'work_experience', 'english_proficiency'];
+    case 2:
+      return ['name', 'email', 'phone', 'how_hear'];
+    case 3:
+      return []; // Step 3 is optional
+    case 4:
+      return ['terms', 'privacy'];
+    default:
+      return [];
+  }
+}
+
+function showFieldError(fieldName, message) {
+  // Remove existing error messages
+  const existingError = document.querySelector(`.error-message[data-field="${fieldName}"]`);
+  if (existingError) {
+    existingError.remove();
+  }
+  
+  // Create and show new error message
+  const field = document.querySelector(`[name="${fieldName}"]`);
+  if (field) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.setAttribute('data-field', fieldName);
+    errorDiv.textContent = message;
+    errorDiv.style.cssText = `
+      color: #c4161c;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: block;
+    `;
+    field.parentNode.appendChild(errorDiv);
+  }
+}
+
+function toggleSection(sectionId) {
+  const section = document.getElementById(sectionId + 'Section');
+  const icon = document.getElementById(sectionId + 'Icon');
+  
+  if (section.style.display === 'none') {
+    section.style.display = 'block';
+    icon.textContent = '▲';
+  } else {
+    section.style.display = 'none';
+    icon.textContent = '▼';
+  }
+}
+
+function updateReviewSummary(data) {
+  const summaryDiv = document.getElementById('reviewSummary');
+  summaryDiv.innerHTML = `
+    <div class="review-item">
+      <strong>Immigration Goal:</strong> ${getGoalLabel(data.primary_goal)}
+    </div>
+    <div class="review-item">
+      <strong>Country:</strong> ${data.current_country || 'Not selected'}
+    </div>
+    <div class="review-item">
+      <strong>Age:</strong> ${data.age || 'Not provided'}
+    </div>
+    <div class="review-item">
+      <strong>Education:</strong> ${getEducationLabel(data.education_level)}
+    </div>
+    <div class="review-item">
+      <strong>Work Experience:</strong> ${data.work_experience || '0'} years
+    </div>
+    <div class="review-item">
+      <strong>English:</strong> ${getEnglishLabel(data.english_proficiency)}
+    </div>
+    <div class="review-item">
+      <strong>Name:</strong> ${data.name || 'Not provided'}
+    </div>
+    <div class="review-item">
+      <strong>Email:</strong> ${data.email || 'Not provided'}
+    </div>
+    <div class="review-item">
+      <strong>Phone:</strong> ${data.phone || 'Not provided'}
+    </div>
+  `;
+}
+
+function getGoalLabel(value) {
+  const labels = {
+    'ee': 'Express Entry',
+    'pnp': 'Provincial Nominee Program',
+    'aip': 'Atlantic Immigration Program',
+    'rnip': 'Rural and Northern Immigration Pilot',
+    'study': 'Study Around the World',
+    'work': 'Work in Canada',
+    'visit': 'Visit Canada',
+    'startup': 'Startup Visa Program',
+    'self_employed': 'Self-Employed Program',
+    'investor': 'Investor Programs',
+    'spouse': 'Spouse/Partner Sponsorship',
+    'parent': 'Parent/Grandparent Sponsorship',
+    'other_family': 'Other Family Members',
+    'not_sure': 'Not sure - Need guidance'
+  };
+  return labels[value] || value;
+}
+
+function getEducationLabel(value) {
+  const labels = {
+    'high-school': 'High School',
+    'diploma': 'Diploma/Certificate',
+    'bachelor': 'Bachelor\'s Degree',
+    'master': 'Master\'s Degree',
+    'phd': 'PhD/Doctorate'
+  };
+  return labels[value] || value;
+}
+
+function getEnglishLabel(value) {
+  const labels = {
+    'none': 'No English proficiency',
+    'basic': 'Basic (Conversational)',
+    'intermediate': 'Intermediate',
+    'advanced': 'Advanced',
+    'native': 'Native/Near Native'
+  };
+  return labels[value] || value;
+}
+
+// Form submission
+document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  if (!validateCurrentStep()) {
+    return;
+  }
+  
+  // Get form data
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData);
+  
+  // Create professional email content
+  const emailContent = createProfessionalEmail(data);
+  
+  // Send email
+  sendAssessmentEmail(emailContent, data);
+});
+
+function createProfessionalEmail(data) {
+  const email = `
+NEW IMMIGRATION ASSESSMENT REQUEST
+=====================================
+
+Personal Information:
+------------------
+Name: ${data.name || 'Not provided'}
+Email: ${data.email || 'Not provided'}
+Phone: ${data.phone || 'Not provided'}
+
+Assessment Details:
+------------------
+Primary Goal: ${getGoalLabel(data.primary_goal)}
+Current Country: ${data.current_country || 'Not selected'}
+Age: ${data.age || 'Not provided'}
+Education Level: ${getEducationLabel(data.education_level)}
+Work Experience: ${data.work_experience || 'Not provided'}
+English Proficiency: ${getEnglishLabel(data.english_proficiency)}
+French Proficiency: ${data.french_proficiency || 'Not applicable'}
+Job Offer: ${data.job_offer || 'Not selected'}
+
+Additional Information:
+---------------------
+${data.background_info || 'No additional information provided'}
+
+How They Found Us:
+------------------
+${data.how_hear || 'Not selected'}
+
+Consent & Agreements:
+----------------------
+Terms Agreed: ${data.terms ? 'Yes' : 'No'}
+Privacy Agreed: ${data.privacy ? 'Yes' : 'No'}
+Newsletter: ${data.newsletter ? 'Yes' : 'No'}
+
+Submission Date: ${new Date().toLocaleString()}
+  `;
+  
+  return email;
+}
+
+function sendAssessmentEmail(emailContent, formData) {
+  // Check if running locally (file:// protocol)
+  const isLocal = window.location.protocol === 'file:';
+  
+  if (isLocal) {
+    // Use mailto fallback for local development
+    const subjectLine = 'CANVEX Immigration - Assessment Request';
+    const body = emailContent;
+    
+    const mailtoLink = `mailto:infor@canvex.ca?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+    
+    // Show message and open email client
+    const messageDiv = document.createElement('div');
+    messageDiv.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      z-index: 10000;
+      border: 2px solid rgba(23, 162, 184, 0.3);
+    `;
+    
+    messageDiv.innerHTML = `
+      <h3 style="color: #17a2b8; margin-bottom: 1rem;">Opening Your Email Client...</h3>
+      <p style="color: #333; margin-bottom: 1rem;">If it doesn't open, please email us directly at <a href="mailto:infor@canvex.ca" style="color: #c4161c;">infor@canvex.ca</a></p>
+      <div style="margin: 15px 0; padding: 10px; background: #f9f9f9; border-radius: 5px; font-size: 0.85rem; text-align: left; max-height: 200px; overflow-y: auto;">
+        <strong style="display: block; margin-bottom: 10px;">Or copy and email this information:</strong>
+        <strong>To:</strong> infor@canvex.ca<br>
+        <strong>Subject:</strong> ${subjectLine}<br><br>
+        <strong>Message:</strong><br>
+        <pre style="white-space: pre-wrap; font-family: inherit; margin: 0;">${body}</pre>
+      </div>
+      <button onclick="this.parentElement.remove(); document.getElementById('assessmentForm').reset();" style="background: #c4161c; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Close</button>
+    `;
+    
+    document.body.appendChild(messageDiv);
+    
+    // Try to open email client
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+    }, 500);
+    
+    return;
+  }
+
+  // Use database for web server
+  const data = {
+    form_type: 'assessment',
+    name: formData.name || '',
+    email: formData.email || '',
+    phone: formData.phone || '',
+    age: parseInt(formData.age) || 0,
+    education: formData.education || '',
+    experience: formData.experience || '',
+    language: formData.language || '',
+    crs_score: parseInt(formData.crs_score) || 0
+  };
+
+  fetch('../database/save_submission.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.success) {
+      showSuccessMessage();
+    } else {
+      alert('Sorry, there was an error saving your assessment: ' + result.message + '. Please try again.');
+    }
+  })
+  .catch(error => {
+    console.error('Assessment submission error:', error);
+    alert('Sorry, there was an error saving your assessment. Please try again.');
+  });
+}
+
+function showSuccessMessage() {
+  const successDiv = document.createElement('div');
+  successDiv.className = 'success-message';
+  successDiv.innerHTML = `
+    <div class="success-content">
+      <h3>Thank You!</h3>
+      <p>Your assessment has been submitted successfully. We'll contact you within 1-2 business days.</p>
+      <button onclick="this.parentElement.parentElement.remove()" class="btn btn-primary">Close</button>
+    </div>
+  `;
+  
+  successDiv.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+  `;
+  
+  const successContent = successDiv.querySelector('.success-content');
+  successContent.style.cssText = `
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  `;
+  
+  document.body.appendChild(successDiv);
+}
+</script>
+</body>
+</html>
