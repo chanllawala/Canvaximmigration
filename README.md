@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CANVEX Immigration Website
 
 ## 🚀 Live Demo
@@ -72,3 +73,7 @@ This project is proprietary and licensed to CANVEX Immigration.
 ---
 
 **Professional immigration website with military-grade security - Ready for production deployment!**
+=======
+# Canvaximmigration
+Immigration consultancy website 
+>>>>>>> 55e6d35954525b26f51a7dfd8c6eb69e2596f9fd
